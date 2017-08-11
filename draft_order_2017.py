@@ -1,6 +1,6 @@
-#!/usr/bin/python3
-# -- coding: utf-8 --
 import random
+
+import time
 
 TEAMS = [
     "Gisele's Brazilian",
@@ -18,7 +18,6 @@ TEAMS = [
 ]
 
 RUNNERS = [
-
     (4081, "Sheila Chepkirui KIPROTICH"),
     (3703, "Kalkidan GEZAHEGNE"),
     (4343, "Molly HUDDLE"),
@@ -34,18 +33,15 @@ RUNNERS = [
     (4342, "Shelby HOULIHAN"),
     (4130, "Susan KRUMINS"),
     (3839, "Almaz AYANA")
-
 ]
 
-assert (len(RUNNERS) > len(TEAMS)) and (len(TEAMS)==12)
-
+assert (len(RUNNERS) > len(TEAMS)) and (len(TEAMS) == 12)
 random.shuffle(RUNNERS)
 random.shuffle(TEAMS)
-
 with open("2017_runner.txt", "w") as f:
     for team in TEAMS:
+        time.sleep(random.randint(1, 5))
         bib, runner = RUNNERS.pop()
         selection = "{:<30} {:<30} (bib {})".format(team, runner, bib)
         f.write(selection + "\n")
         print(selection)
-        print("-" * 72)
