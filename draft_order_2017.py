@@ -1,4 +1,5 @@
-import csv
+#!/usr/bin/python3
+# -- coding: utf-8 --
 import random
 
 TEAMS = [
@@ -41,7 +42,7 @@ assert (len(RUNNERS) > len(TEAMS)) and (len(TEAMS)==12)
 random.shuffle(RUNNERS)
 random.shuffle(TEAMS)
 
-with open("2017_runner.csv", "w") as f:
+with open("2017_runner.txt", "w") as f:
     for team in TEAMS:
         bib, runner = RUNNERS.pop()
         selection = "{:<30} {:<30} (bib {})".format(team, runner, bib)
