@@ -38,6 +38,7 @@ RUNNERS = [
 assert (len(RUNNERS) > len(TEAMS)) and (len(TEAMS) == 12)
 random.shuffle(RUNNERS)
 random.shuffle(TEAMS)
+print("Starting draw...\n")
 with open("2017_runner.txt", "w") as f:
     for team in TEAMS:
         time.sleep(random.randint(1, 5))
@@ -45,3 +46,4 @@ with open("2017_runner.txt", "w") as f:
         selection = "{:<30} {:<30} (bib {})".format(team, runner, bib)
         f.write(selection + "\n")
         print(selection)
+print("\nDraw complete")
